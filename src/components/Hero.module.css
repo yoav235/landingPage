@@ -1,0 +1,76 @@
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.greeting {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.title {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.bio {
+  max-width: 540px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.15s;
+}
+
+.btnPrimary:hover {
+  opacity: 0.85;
+}
+
+.btnGhost {
+  color: var(--text);
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btnGhost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  opacity: 1;
+}

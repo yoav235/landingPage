@@ -1,0 +1,48 @@
+.blurb {
+  max-width: 480px;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 4rem;
+}
+
+.item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  min-width: 60px;
+}
+
+.item a {
+  font-size: 1rem;
+  color: var(--text);
+  transition: color 0.15s;
+}
+
+.item a:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+}
