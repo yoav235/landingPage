@@ -39,6 +39,28 @@
   margin-bottom: 2.5rem;
 }
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.15s;
+  width: fit-content;
+}
+
+.contactLink:hover {
+  color: var(--accent);
+}
+
 .cta {
   display: flex;
   gap: 1rem;

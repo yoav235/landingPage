@@ -6,7 +6,7 @@ const projects = [
     description:
       "Full-stack automated label printing and production tracking tool for Schneider's butchery. Engineered dynamic TSPL template generation for thermal printers with direct Windows Spooler API integration, automated Excel reports via ExcelJS and node-cron. Boosted packaging productivity by 25% and saved the client 45,000 NIS annually.",
     tech: ['React', 'Node.js', 'Express', 'ExcelJS', 'Windows Spooler API'],
-    github: 'https://github.com/yoav235',
+    githubs: [],
     live: null,
   },
   {
@@ -14,52 +14,62 @@ const projects = [
     description:
       'Full-stack web application for the Hebrew University of Jerusalem (CIDR), replacing a legacy Google Sheets-based system. Built backend APIs and a dedicated website from scratch, delivering a customized database interface that improved organizational access to information.',
     tech: ['React', 'Express', 'MongoDB', 'REST API'],
-    github: 'https://github.com/yoav235',
-    live: null,
+    githubs: [],
+    live: 'https://democracy-website.vercel.app/',
   },
   {
-    title: 'CS Teaching Assistant Tooling',
+    title: 'Shift Manager',
     description:
-      'Developed supporting materials and debugging workflows for Python programming and algorithm courses at the Hebrew University of Jerusalem — providing one-on-one debugging support, code reviews, and algorithm walkthroughs.',
-    tech: ['Python', 'Algorithms', 'Data Structures'],
-    github: 'https://github.com/yoav235',
+      'Modern shift management application enabling seamless scheduling coordination between employees and managers. Features employee availability requests with custom shift hours, manager consolidated request view, and interactive schedule maker with 24-hour coverage visualization. Integrates with Express/Node.js backend hosted on Render.',
+    tech: ['React', 'Express', 'REST API', 'Render', 'MongoDB'],
+    githubs: [
+      { name: 'Frontend', url: 'https://github.com/yoav235/shift-manger-react' },
+      { name: 'Backend', url: 'https://github.com/yoav235/shift-manager-backend' },
+    ],
     live: null,
   },
 ]
 
 export default function Projects() {
   return (
-    <section id="projects">
-      <p className="section-label">What I've built</p>
-      <h2 className="section-title">Projects</h2>
-      <div className={styles.grid}>
-        {projects.map(({ title, description, tech, github, live }) => (
-          <article key={title} className={styles.card}>
-            <div className={styles.top}>
-              <h3 className={styles.title}>{title}</h3>
-              <div className={styles.links}>
-                {github && (
-                  <a href={github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <GithubIcon />
-                  </a>
-                )}
-                {live && (
-                  <a href={live} target="_blank" rel="noopener noreferrer" aria-label="Live demo">
-                    <ExternalIcon />
-                  </a>
-                )}
+      <section id="projects">
+        <p className="section-label">What I've built</p>
+        <h2 className="section-title">Projects</h2>
+        <div className={styles.grid}>
+          {projects.map(({ title, description, tech, githubs, live }) => (
+            <article key={title} className={styles.card}>
+              <div className={styles.top}>
+                <h3 className={styles.title}>{title}</h3>
+                <div className={styles.links}>
+                  {githubs?.map((repo) => (
+                    <a
+                      key={repo.name || repo.url}
+                      href={repo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`GitHub - ${repo.name || 'Repository'}`}
+                      title={repo.name}
+                    >
+                      <GithubIcon />
+                    </a>
+                  ))}
+                  {live && (
+                    <a href={live} target="_blank" rel="noopener noreferrer" aria-label="Live demo">
+                      <ExternalIcon />
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-            <p className={styles.desc}>{description}</p>
-            <ul className={styles.tech}>
-              {tech.map((t) => (
-                <li key={t} className={styles.techTag}>{t}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </div>
-    </section>
+              <p className={styles.desc}>{description}</p>
+              <ul className={styles.tech}>
+                {tech.map((t) => (
+                  <li key={t} className={styles.techTag}>{t}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
   )
 }
 

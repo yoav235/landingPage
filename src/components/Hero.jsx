@@ -15,9 +15,19 @@ export default function Hero() {
         workflows to deliver faster, higher-quality results. All about goals,
         challenges, and deadlines.
       </p>
+      <div className={styles.contact}>
+        <a href="mailto:yoav.schneider2@mail.huji.ac.il" className={styles.contactLink}>
+          ✉️ yoav.schneider2@mail.huji.ac.il
+        </a>
+        <a href="https://www.linkedin.com/in/yoav-schneider-cs/" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+          💼 LinkedIn
+        </a>
+        <a href="https://github.com/yoav235" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>
+          🔗 GitHub
+        </a>
+      </div>
       <div className={styles.cta}>
         <a href="#projects" className={styles.btnPrimary}>View my work</a>
-        <a href="#contact" className={styles.btnGhost}>Get in touch</a>
       </div>
     </section>
   )
