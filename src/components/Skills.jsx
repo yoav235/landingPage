@@ -19,7 +19,7 @@ const categories = [
   },
   {
     name: 'Concepts',
-    skills: ['Algorithms', 'Data Structures', 'OOP', 'SDD / Specs'],
+    skills: ['Algorithms', 'Data Structures', 'OOP', 'SDD / Specs', 'Network Protocols (TCP/IP, UDP)'],
   },
 ]
 

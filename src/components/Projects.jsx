@@ -18,6 +18,14 @@ const projects = [
     live: 'https://democracy-website.vercel.app/',
   },
   {
+    title: 'Nvidia Jetson Cyber Defense Suite',
+    description:
+      'Engineered a Python and Bash-based security hardening suite for Nvidia Jetson devices to mitigate physical and network vulnerabilities. The solution automates the locking of unused USB interfaces and network ports while implementing custom iptables chains to enforce strict traffic filtering and restrict access exclusively to trusted IP allowlists.',
+    tech: ['Python', 'Bash', 'Linux', 'Network Security'],
+    githubs: [],
+    live: null,
+  },
+  {
     title: 'Shift Manager',
     description:
       'Modern shift management application enabling seamless scheduling coordination between employees and managers. Features employee availability requests with custom shift hours, manager consolidated request view, and interactive schedule maker with 24-hour coverage visualization. Integrates with Express/Node.js backend hosted on Render.',
@@ -32,44 +40,44 @@ const projects = [
 
 export default function Projects() {
   return (
-      <section id="projects">
-        <p className="section-label">What I've built</p>
-        <h2 className="section-title">Projects</h2>
-        <div className={styles.grid}>
-          {projects.map(({ title, description, tech, githubs, live }) => (
-            <article key={title} className={styles.card}>
-              <div className={styles.top}>
-                <h3 className={styles.title}>{title}</h3>
-                <div className={styles.links}>
-                  {githubs?.map((repo) => (
-                    <a
-                      key={repo.name || repo.url}
-                      href={repo.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`GitHub - ${repo.name || 'Repository'}`}
-                      title={repo.name}
-                    >
-                      <GithubIcon />
-                    </a>
-                  ))}
-                  {live && (
-                    <a href={live} target="_blank" rel="noopener noreferrer" aria-label="Live demo">
-                      <ExternalIcon />
-                    </a>
-                  )}
-                </div>
-              </div>
-              <p className={styles.desc}>{description}</p>
-              <ul className={styles.tech}>
-                {tech.map((t) => (
-                  <li key={t} className={styles.techTag}>{t}</li>
+    <section id="projects">
+      <p className="section-label">What I've built</p>
+      <h2 className="section-title">Projects</h2>
+      <div className={styles.grid}>
+        {projects.map(({ title, description, tech, githubs, live }) => (
+          <article key={title} className={styles.card}>
+            <div className={styles.top}>
+              <h3 className={styles.title}>{title}</h3>
+              <div className={styles.links}>
+                {githubs?.map((repo) => (
+                  <a
+                    key={repo.name || repo.url}
+                    href={repo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`GitHub - ${repo.name || 'Repository'}`}
+                    title={repo.name}
+                  >
+                    <GithubIcon />
+                  </a>
                 ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
+                {live && (
+                  <a href={live} target="_blank" rel="noopener noreferrer" aria-label="Live demo">
+                    <ExternalIcon />
+                  </a>
+                )}
+              </div>
+            </div>
+            <p className={styles.desc}>{description}</p>
+            <ul className={styles.tech}>
+              {tech.map((t) => (
+                <li key={t} className={styles.techTag}>{t}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
   )
 }
 
