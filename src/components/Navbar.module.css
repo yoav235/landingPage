@@ -18,6 +18,36 @@
   justify-content: space-between;
 }
 
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.socialBtn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  transition: opacity 0.15s, transform 0.15s;
+  letter-spacing: 0.01em;
+}
+
+.socialBtn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.linkedin {
+  background: #0a66c2;
+  color: #fff;
+}
+
+.github {
+  background: #238636;
+  color: #fff;
+}
+
 .logo {
   font-family: var(--font-mono);
   font-size: 1.15rem;
