@@ -6,14 +6,10 @@ export default function Hero() {
       <p className={styles.greeting}>Hi, I'm</p>
       <h1 className={styles.name}>Yoav Schneider</h1>
       <h2 className={styles.title}>
-        Fullstack Developer
+        Fullstack & Systems Engineer
       </h2>
       <p className={styles.bio}>
-        Full stack developer with hands-on experience building web applications
-        and leading projects end-to-end. Skilled in AI-augmented development
-        with tools like Claude Code and Cursor — leveraging specs-driven
-        workflows to deliver faster, higher-quality results. All about goals,
-        challenges, and deadlines.
+        Fullstack developer and systems engineer with hands-on experience building web applications and system-level solutions. Proficient in Python, Bash scripting, network diagnostics, and Linux environments. Leverage AI-augmented development tools like Claude Code and Cursor for specs-driven workflows to deliver faster, higher-quality results. Responsible and dependable—all about goals, challenges, and deadlines.
       </p>
       <div className={styles.contact}>
         <a href="mailto:yoav.schneider2@mail.huji.ac.il" className={styles.contactLink}>
