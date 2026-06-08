@@ -8,6 +8,7 @@ const projects = [
     tech: ['React', 'Node.js', 'Express', 'ExcelJS', 'Windows Spooler API'],
     githubs: [],
     live: null,
+    image: '/butchery.png',
   },
   {
     title: 'CIDR Research Platform',
@@ -16,6 +17,7 @@ const projects = [
     tech: ['React', 'Express', 'MongoDB', 'REST API'],
     githubs: [],
     live: 'https://democracy-website.vercel.app/',
+    image: '/CIDR.png',
   },
   {
     title: 'Nvidia Jetson Cyber Defense Suite',
@@ -24,6 +26,7 @@ const projects = [
     tech: ['Python', 'Bash', 'Linux', 'Network Security'],
     githubs: [],
     live: null,
+    image: '/nvidia_jetson_cyber.png',
   },
   {
     title: 'Shift Manager',
@@ -35,6 +38,7 @@ const projects = [
       { name: 'Backend', url: 'https://github.com/yoav235/shift-manager-backend' },
     ],
     live: null,
+    image: '/shift_manager.png',
   },
 ]
 
@@ -44,36 +48,43 @@ export default function Projects() {
       <p className="section-label">What I've built</p>
       <h2 className="section-title">Projects</h2>
       <div className={styles.grid}>
-        {projects.map(({ title, description, tech, githubs, live }) => (
+        {projects.map(({ title, description, tech, githubs, live, image }) => (
           <article key={title} className={styles.card}>
-            <div className={styles.top}>
-              <h3 className={styles.title}>{title}</h3>
-              <div className={styles.links}>
-                {githubs?.map((repo) => (
-                  <a
-                    key={repo.name || repo.url}
-                    href={repo.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`GitHub - ${repo.name || 'Repository'}`}
-                    title={repo.name}
-                  >
-                    <GithubIcon />
-                  </a>
-                ))}
-                {live && (
-                  <a href={live} target="_blank" rel="noopener noreferrer" aria-label="Live demo">
-                    <ExternalIcon />
-                  </a>
-                )}
+            {image && (
+              <div className={styles.thumbnail}>
+                <img src={image} alt={title} />
               </div>
+            )}
+            <div className={styles.cardBody}>
+              <div className={styles.top}>
+                <h3 className={styles.title}>{title}</h3>
+                <div className={styles.links}>
+                  {githubs?.map((repo) => (
+                    <a
+                      key={repo.name || repo.url}
+                      href={repo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`GitHub - ${repo.name || 'Repository'}`}
+                      title={repo.name}
+                    >
+                      <GithubIcon />
+                    </a>
+                  ))}
+                  {live && (
+                    <a href={live} target="_blank" rel="noopener noreferrer" aria-label="Live demo">
+                      <ExternalIcon />
+                    </a>
+                  )}
+                </div>
+              </div>
+              <p className={styles.desc}>{description}</p>
+              <ul className={styles.tech}>
+                {tech.map((t) => (
+                  <li key={t} className={styles.techTag}>{t}</li>
+                ))}
+              </ul>
             </div>
-            <p className={styles.desc}>{description}</p>
-            <ul className={styles.tech}>
-              {tech.map((t) => (
-                <li key={t} className={styles.techTag}>{t}</li>
-              ))}
-            </ul>
           </article>
         ))}
       </div>
