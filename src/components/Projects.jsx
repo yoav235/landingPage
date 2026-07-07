@@ -40,6 +40,24 @@ const projects = [
     live: null,
     image: '/shift_manager.png',
   },
+  {
+    title: 'Tree-Based Concept Blending with Fine-Tuned LLMs',
+    description:
+      'Research project testing whether a small fine-tuned model can rival a larger general-purpose one at creative concept combination. Built a Python pipeline that decomposes each concept into a hierarchical tree — semantics, affordances, attributes — and blends two concepts via subtree grafting under an asymmetric base-modifier scheme. Generated and human-ranked a ~100-item dataset (intuitiveness, justification, creative fit, surprise), then fine-tuned LLaMA 3.1 using Unsloth on Google Colab and benchmarked it head-to-head against GPT-5.',
+    tech: ['Python', 'LLaMA 3.1', 'Unsloth', 'Google Colab', 'Ollama', 'Fine-tuning'],
+    githubs: [{ name: 'GitHub', url: 'https://github.com/yoav235/datase_generating' }],
+    live: null,
+    image: '/llm_project.png',
+  },
+  {
+    title: 'NOPE-Authenticated Mixnet',
+    description:
+      'Privacy-preserving anonymous communication network that hardens the Mixnet trust model with NOPE zero-knowledge proofs. Built a 3-hop onion-routed mixnet (client → mix1 → mix2 → mix3 → recipient) with per-hop RSA+AES encryption over TLS, where the local Root CA embeds a NOPE (ZKP) proof verified at setup — removing reliance on a trusted third-party CA and blocking attackers from impersonating clients or servers. Includes per-round cover traffic, gRPC transport, and a Dockerized deployment with a pytest suite.',
+    tech: ['Python', 'gRPC', 'Zero-Knowledge Proofs', 'TLS / OpenSSL', 'Cryptography', 'Docker'],
+    githubs: [{ name: 'GitHub', url: 'https://github.com/yoav235/mixnet_project' }],
+    live: null,
+    image: '/mixnet.png',
+  },
 ]
 
 export default function Projects() {
