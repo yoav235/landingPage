@@ -1,5 +1,7 @@
 import styles from './Projects.module.css'
 
+const GITHUB_PROFILE = 'https://github.com/yoav235'
+
 const projects = [
   {
     title: 'Butchery Label & Production System',
@@ -77,18 +79,30 @@ export default function Projects() {
               <div className={styles.top}>
                 <h3 className={styles.title}>{title}</h3>
                 <div className={styles.links}>
-                  {githubs?.map((repo) => (
+                  {githubs?.length ? (
+                    githubs.map((repo) => (
+                      <a
+                        key={repo.name || repo.url}
+                        href={repo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`GitHub - ${repo.name || 'Repository'}`}
+                        title={repo.name}
+                      >
+                        <GithubIcon />
+                      </a>
+                    ))
+                  ) : (
                     <a
-                      key={repo.name || repo.url}
-                      href={repo.url}
+                      href={GITHUB_PROFILE}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`GitHub - ${repo.name || 'Repository'}`}
-                      title={repo.name}
+                      aria-label="GitHub profile"
+                      title="GitHub profile"
                     >
                       <GithubIcon />
                     </a>
-                  ))}
+                  )}
                   {live && (
                     <a href={live} target="_blank" rel="noopener noreferrer" aria-label="Live demo">
                       <ExternalIcon />
