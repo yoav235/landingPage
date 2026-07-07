@@ -3,7 +3,7 @@ import styles from './Skills.module.css'
 const categories = [
   {
     name: 'Languages',
-    skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C', 'C++'],
+    skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C', 'C++', 'Bash'],
   },
   {
     name: 'Frontend',
@@ -11,11 +11,19 @@ const categories = [
   },
   {
     name: 'Backend & DB',
-    skills: ['Node.js', 'Express', 'MongoDB', 'REST APIs'],
+    skills: ['Node.js', 'Express', 'MongoDB', 'REST APIs', 'gRPC'],
+  },
+  {
+    name: 'AI / ML',
+    skills: ['Fine-tuning', 'Unsloth', 'Ollama'],
+  },
+  {
+    name: 'Security & Crypto',
+    skills: ['Cryptography', 'TLS / OpenSSL', 'Network Security'],
   },
   {
     name: 'Tools',
-    skills: ['Git', 'Linux', 'JIRA', 'Postman', 'Claude Code', 'Cursor'],
+    skills: ['Git', 'Linux', 'Docker', 'JIRA', 'Postman', 'Claude Code', 'Cursor'],
   },
   {
     name: 'Concepts',
